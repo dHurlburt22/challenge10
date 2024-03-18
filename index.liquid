@@ -3,5 +3,10 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<div x-data="{wartortleText: $fetchjson('https://pokeapi.co/api/v2/pokemon/wartortle', pokeName='name')}"> 
+    <h1 class="text-8xl drop-shadow-lg" x-text='wartortleText'> </h1>
+</div>
+
+<div x-data="{wartortleWeight: $fetchjson('https://pokeapi.co/api/v2/pokemon/wartortle', pokeWeight='weight')}"> 
+    <h1 class="text-8xl drop-shadow-lg" x-text='wartortleWeight'> </h1>
+</div>
