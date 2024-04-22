@@ -3,10 +3,24 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<div x-data="{wartortleText: $fetchjson('https://pokeapi.co/api/v2/pokemon/wartortle', pokeName='base_experience')}"> 
-    <h1 class="text-8xl drop-shadow-lg" x-text='wartortleText'> </h1>
+
+<h1>Pokemon Name:</h1>
+<div id="pokemonPromptName" x-data="{wartortleName: $fetchjson('https://pokeapi.co/api/v2/pokemon/' + pokemonPromptName, pokeName='name')}"> 
+    <h1 class="text-8xl drop-shadow-lg" x-text='wartortleName'> </h1>
 </div>
 
-<div x-data="{wartortleWeight: $fetchjson('https://pokeapi.co/api/v2/pokemon/wartortle', pokeWeight='weight')}"> 
+<div id="pokemonPromptName" x-data="{wartortleExp: $fetchjson('https://pokeapi.co/api/v2/pokemon/' + pokemonPromptName, pokeExp='base_experience')}"> 
+    <h1>Pokemon Base Exp:</h1>
+    <h1 class="text-8xl drop-shadow-lg" x-text='wartortleExp'></h1>
+</div>
+
+<div id="pokemonPromptName" x-data="{wartortleWeight: $fetchjson('https://pokeapi.co/api/v2/pokemon/' + pokemonPromptName, pokeWeight='weight')}"> 
+    <h1>Pokemon Weight:</h1>
     <h1 class="text-8xl drop-shadow-lg" x-text='wartortleWeight'> </h1>
 </div>
+
+<script>
+    var pokemonPromptName = prompt("Who's that Pokemon?");
+    document.getElementById("pokemonPromptName").innerHTML = pokemonPromptName;
+</script>
+
